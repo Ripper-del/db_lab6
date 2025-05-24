@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "FlexForm",
   description: "none",
-  base: '/db_lab/',
+  base: '/db_lab6/',
 
   themeConfig: {
     nav: [
