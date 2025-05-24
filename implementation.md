@@ -28,25 +28,25 @@ CREATE DATABASE IF NOT EXISTS flexform;
 USE flexform;
 
 CREATE TABLE IF NOT EXISTS forms (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL
-);
+                                     id INT AUTO_INCREMENT PRIMARY KEY,
+                                     title VARCHAR(255) NOT NULL
+    );
 
 CREATE TABLE IF NOT EXISTS questions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    form_id INT,
-    text VARCHAR(255) NOT NULL,
+                                         id INT AUTO_INCREMENT PRIMARY KEY,
+                                         form_id INT,
+                                         text VARCHAR(255) NOT NULL,
     type ENUM('text', 'number', 'date', 'radio', 'checkbox') NOT NULL,
     required BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (form_id) REFERENCES forms(id)
-);
+    );
 
 CREATE TABLE IF NOT EXISTS responses (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    question_id INT,
-    answer TEXT,
-    FOREIGN KEY (question_id) REFERENCES questions(id)
-);
+                                         id INT AUTO_INCREMENT PRIMARY KEY,
+                                         question_id INT,
+                                         answer TEXT,
+                                         FOREIGN KEY (question_id) REFERENCES questions(id)
+    );
 ```
 
 ## Bean-класи
@@ -251,7 +251,7 @@ public class Main {
 ```
 
 4. Після запуску я побачив результати виконання в консолі, а також перевірив, що нові записи з'явилися в базі `flexform`.
-![Лабораторна робота](/db_lab6/456.jpg)
+   ![](./images/456.jpg)
 
 
 
